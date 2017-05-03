@@ -1,0 +1,10 @@
+{
+  "name": "TODOList",
+  "version": "0.0.1",
+  "description": "Servidor TODO List",
+  "dependencies": {
+    "socket.io": "~0.9.6",
+     "mime": "~1.2.7",
+     "events": "~1.1.1"
+  }
+}
