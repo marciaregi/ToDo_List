@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  min-width: 250px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style do header */
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/*Header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Styl dos input */
+input {
+  border: none;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style do button  "Add" */
+.addBtn {
+  padding: 10px;
+  width: 75%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
