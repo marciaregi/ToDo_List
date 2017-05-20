@@ -9,22 +9,23 @@ function divSystemContentElement(message) {
 }
 
 //Verifica o input do usuário e toma a ação desejada
-function processUserInput(chatApp, socket) {
+function processUserInput(todo, socket) {
   var descricao = $('#descricaoInput').val();
   var autor = $('#autorInput').val();
   var data = $('#sdataInput').val();
   var prioridade = $('#prioridadeSelect').val();
 
-  var systemMessage;
+  var systemMessage = "fsd";
 
   //O input corresponde a um comando
   if (message.charAt(0) == '/') {
-    systemMessage = chatApp.processCommand(message);
+    systemMessage = todo.processCommand(message);
     if (systemMessage) {
       $('#messages').append(divSystemContentElement(systemMessage));
     }
   } else { //O input corresponde a uma mensagem
-    chatApp.sendMessage($('#room').text(), message);
+    todo
+    .sendMessage($('#room').text(), message);
     $('#messages').append(divEscapedContentElement(message));
     $('#messages').scrollTop($('#messages').prop('scrollHeight'));
   }
