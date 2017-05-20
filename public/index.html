@@ -1,20 +1,30 @@
 <!doctype html>
 <html lang='en'>
 <head>
+<meta charset="UTF-8">
+
 <title>ToDo List</title>
+  <link rel='stylesheet' href='/stylesheets/style.css'></link>
 </head>
 <body>
 
-<div id="myDIV" class="header">
-  <h2 style="margin:5px">ToDo List</h2>
-  <input type="text" id="descricaoInput" placeholder="Descrição da Tarefa...">
-   <input type="text" id="autorInput" placeholder="Autor da tarefa...">
-  <input type="datetime-local" name="bdaytime">
-    <input type="text" id="prioridadeInput" placeholder="Prioridade...">
-  <span onclick="newElement()" class="addBtn">Add</span>
-</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="lib/javascript.js"></script>
+  <h2>ToDo List</h2>
+  <form>
+    <input type="text" id="descricaoInput" placeholder="Tarefa...">
+   <input type="text" id="autorInput" placeholder="Autor...">
+   <input type="date" id="dataInput" placeholder="Data">
+   <select id='prioridadeSelect'>
+      <option>Alta</option>
+      <option>Média</option>
+      <option>Baixa</option>
+    </select> 
+  <input type="button" id="btnEviar" value="Enviar"/>
+</form>
+
+	<script src='/socket.io/socket.io.js' type='text/javascript'></script>
+	<script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
+	<script src='/javascripts/todo.js' type='text/javascript'></script>
+	<script src='/javascripts/todo_ui.js' type='text/javascript'></script>
 	</body>
 </html>
 
