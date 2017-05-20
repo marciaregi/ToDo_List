@@ -1,22 +1,18 @@
 <!doctype html>
 <html lang='en'>
-	<head>
-	<title>ToDo List</title>
-	<link rel='stylesheet' href='stylesheets/style.css'></link>
-	 <meta charset="UTF-8">
-	</head>
-	<body>
+<head>
+<title>ToDo List</title>
+</head>
+<body>
 
-	<div id="myDIV" class="header">
-	  <h2 style="margin:5px">ToDo List</h2>
-	  <input type="text" id="descricaoInput" placeholder="Descrição da Tarefa...">
-	   <input type="text" id="autorInput" placeholder="Autor da tarefa...">
-	  <input type="datetime-local" name="bdaytime">
-	    <input type="text" id="prioridadeInput" placeholder="Prioridade...">
-	  <input type="button" id="addBtn" value="Add">
-	</div>
-
-
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">ToDo List</h2>
+  <input type="text" id="descricaoInput" placeholder="Descrição da Tarefa...">
+   <input type="text" id="autorInput" placeholder="Autor da tarefa...">
+  <input type="datetime-local" name="bdaytime">
+    <input type="text" id="prioridadeInput" placeholder="Prioridade...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/javascript.js"></script>
 	</body>
