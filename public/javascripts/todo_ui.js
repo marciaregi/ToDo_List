@@ -10,24 +10,42 @@ function divSystemContentElement(message) {
 
 //Verifica o input do usuário e toma a ação desejada
 function processUserInput(todo, socket) {
-    var descricao = $('#descricaoInput').val();
-    var autor = $('#autorInput').val();
-    var data = $('#sdataInput').val();
-    var prioridade = $('#prioridadeSelect').val();
-    var systemMessage = "fsd";
-
-      var auxiliar = descricao + "|" + autor + "|" + data + "|" + prioridade;
-
-
-   var systemMessage;
-    todo.sendMessage($('#tasks').html(), auxiliar);
-    $('#tasks').append(auxiliar);
-    $('#tasks').scrollTop($('#tasks').prop('scrollHeight'));
-     $('#tasks').append(auxiliar);
-
-
-    // limpar os inputs
-  $('#send-message').val('');
+    $(document).ready(
+    function(){
+        $('#button').click(
+            function(){
+                var toAdd = $('input[name=titulo]').val();
+                var toAdd2 = $('input[name=autor]').val();
+                var toAdd3 = $('input[name=data]').val();
+                var toAdd4 = $('input[name=prioridadeSelect]').val();
+              
+                  var auxiliar = "Tarefa: " + toAdd + "  Autor: "+ toAdd2 + "  Data: "+ toAdd3 + "  Prioridade: "+ toAdd4;
+              
+              
+              $("#checkbox").prop("auxiliar", true);
+                 $('ol').append('<li>' + auxiliar + '</li>');
+                 
+   
+            });
+       
+       $("input[name=auxiliar]").keyup(function(event){
+          if(event.keyCode == 13){
+            $("#button").click();
+          }         
+      });
+      
+      $(document).on('dblclick','li', function(){
+        $(this).toggleClass('strike').fadeOut('slow');    
+      });
+      
+      $('input').focus(function() {
+        $(this).val('');
+      });
+      
+      $('ol').sortable();  
+      
+    }
+);
 }
 
 //Estabelece a conexão ao servidor
@@ -35,7 +53,7 @@ var socket = io.connect();
 
 $(document).ready(function() {
   //Cria uma instância de chat no lado cliente
-  var todo = new Chat(socket);
+  var todo = new Todo(socket);
 
   //Lida com o evento nameResult, que contém o resultado da tentativa
   //De mudança de nome
@@ -93,7 +111,7 @@ $(document).ready(function() {
   // }, 1000);
 
   //Cria efeito de focus na caixa de mensagens
-  $('#send-message').focus();
+  
 
   //Submete a entrada de usuário ao tratador de input
   $('#send-form').submit(function() {
