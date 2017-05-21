@@ -3,31 +3,39 @@
   <head>
       <meta charset="UTF-8">
       <title>ToDo List</title>
-      <link rel='stylesheet' href='/stylesheets/style.css'></link>
+      <link rel='stylesheet' href='stylesheets/style.css'></link>
+    <script src='/socket.io/socket.io.js' type='text/javascript'></script>
+      <script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <script src='/javascripts/todo.js' type='text/javascript'></script>
+      <script src='/javascripts/todo_ui.js' type='text/javascript'></script>
+
+    <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+      </script>
   </head>
   <body>
         <div class="container">
     <h2>To Do List</h2>
-  
-       
+
+
     <form name="toDoList">
       <input type="text" name="titulo" placeholder="Tarefa..."/>
       <input type="text" name="autor"  placeholder="Autor..."/>
-      <input type="date" name="data"/>
+      <input type="text" id='datepicker' name="data"/>
       <select id='prioridadeSelect'>
               <option>Alta</option>
               <option>Média</option>
               <option>Baixa</option>
-          </select> 
+          </select>
     </form>
-    
+
     <div id="button" type="submit">Add</div>
     <br/>
-    <ol></ol> 
-      <script src='/socket.io/socket.io.js' type='text/javascript'></script>
-      <script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
-      <script src='/javascripts/todo.js' type='text/javascript'></script>
-      <script src='/javascripts/todo_ui.js' type='text/javascript'></script>
+    <ol></ol>
+
   </body>
 </html>
-
