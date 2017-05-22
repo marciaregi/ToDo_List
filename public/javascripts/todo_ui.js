@@ -60,5 +60,9 @@ $(document).ready(function(){
       });
       
       $('ol').sortable();  
+     
+      message = auxiliar;
+      //Insere a mensagem na tela
+      $('#messages').append(divSystemContentElement(message));
       
     });
