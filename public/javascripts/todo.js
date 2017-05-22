@@ -4,9 +4,8 @@ var Todo = function(socket) {
 };
 
 //Função que envia uma mensagem ao servidor para ser repassada aos demais
-Todo.prototype.sendMessage = function(room, text) {
+Todo.prototype.sendMessage = function(text) {
 	var message = {
-		room: room,
 		text: text
 	};
 	//Emite o evento message ao servidor
@@ -17,5 +16,5 @@ Todo.prototype.sendMessage = function(room, text) {
 };
 
 Todo.prototype.addTask = function(message){
-	this.socket.emit(message,)
+	this.socket.emit(message)
 }
